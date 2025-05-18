@@ -6,7 +6,7 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class ProfesorEntity {
     @PrimaryGeneratedColumn('uuid')
-    id: number;
+    id: string;
 
     @Column()
     cedula: number;
@@ -21,7 +21,7 @@ export class ProfesorEntity {
     extension: number;
 
     @Column()
-    esParSeparado: boolean;
+    esParEvaluador: boolean;
 
     @OneToMany(()=>ProyectoEntity, proyecto => proyecto.mentor)
     mentorias:ProyectoEntity[];

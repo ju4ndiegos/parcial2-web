@@ -29,4 +29,5 @@ export class ProfesorEntity {
     @OneToMany(()=> EvaluacionEntity, evaluacion => evaluacion.profesor)
     evaluaciones: EvaluacionEntity[];
 
+    
 }

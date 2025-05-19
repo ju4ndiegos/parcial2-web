@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "cfa85461-492e-454d-bfc8-db8543e811ae",
+		"name": "Parcial-web",
+		"description": "La idea de las pruebas es ejecutar cada carpeta para probar las características de cada clase.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32522447"
+	},
+	"item": [
+		{
+			"name": "estudiante",
+			"item": [
+				{
+					"name": "crearEstudiante true",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"96d4bdbc-2b54-458e-98b3-01797d4dfd4d\",\r\n    \"cedula\": 123456789,\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"semestre\": 5,\r\n  \"programa\": \"Ingeniería de Sistemas\",\r\n  \"promedio\": 4\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/estudiante",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudiante"
+							]
+						},
+						"description": "Crea un estudiante"
+					},
+					"response": []
+				},
+				{
+					"name": "crearEstudiante falso",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"96d4bdbc-2b54-458e-98b3-01797d4dfd4d\",\r\n    \"cedula\": 123456789,\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"semestre\": 5,\r\n  \"programa\": \"Ingeniería de Sistemas\",\r\n  \"promedio\": 0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/estudiante",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudiante"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_estudiante true",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/estudiante/96d4bdbc-2b54-458e-98b3-01797d4dfd4d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudiante",
+								"96d4bdbc-2b54-458e-98b3-01797d4dfd4d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_estudiante false",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/estudiante/96d4bdbc-2b54-458e-98b3-01797d4dfd4d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estudiante",
+								"96d4bdbc-2b54-458e-98b3-01797d4dfd4d"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "pruebas de la clase estudiante"
+		},
+		{
+			"name": "profesor",
+			"item": [
+				{
+					"name": "crearProfesor false",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"cedula\": 12345678,\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"departamento\": \"Ingeniería\",\r\n  \"extension\": 1000,\r\n  \"esParEvaluador\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profesor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profesor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "asignarEvaluador true",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/profesor/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profesor",
+								"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crearProfesor true Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"cedula\": 12345678,\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"departamento\": \"Ingeniería\",\r\n  \"extension\": 21000,\r\n  \"esParEvaluador\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profesor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profesor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "proyecto",
+			"item": [
+				{
+					"name": "crearProyecto false",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"De\",\r\n  \"area\": \"Tecnología\",\r\n  \"presupuesto\": 250000,\r\n  \"notaFinal\": 4,\r\n  \"estado\": 1,\r\n  \"fechaInicio\": \"2025-03-01T00:00:00.000Z\",\r\n  \"fechaFin\": \"2025-09-30T00:00:00.000Z\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/proyecto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyecto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "avanzarProyecto true",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Desarrollo de App Móvil\",\r\n  \"area\": \"Tecnología\",\r\n  \"presupuesto\": 250000,\r\n  \"notaFinal\": 4,\r\n  \"estado\": 1,\r\n  \"fechaInicio\": \"2025-03-01T00:00:00.000Z\",\r\n  \"fechaFin\": \"2025-09-30T00:00:00.000Z\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/proyecto/f18704ef-fade-4cec-bd57-50224198fff3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyecto",
+								"f18704ef-fade-4cec-bd57-50224198fff3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "avanzarProyecto false",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/proyecto/f18704ef-fade-4cec-bd57-50224198fff3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyecto",
+								"f18704ef-fade-4cec-bd57-50224198fff3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllEstudiantes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"De\",\r\n  \"area\": \"Tecnología\",\r\n  \"presupuesto\": 250000,\r\n  \"notaFinal\": 4,\r\n  \"estado\": 1,\r\n  \"fechaInicio\": \"2025-03-01T00:00:00.000Z\",\r\n  \"fechaFin\": \"2025-09-30T00:00:00.000Z\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/proyecto/f18704ef-fade-4cec-bd57-50224198fff3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyecto",
+								"f18704ef-fade-4cec-bd57-50224198fff3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crearProyecto true Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"f18704ef-fade-4cec-bd57-50224198fff3\",\r\n  \"titulo\": \"Desarrollo de App Móvil\",\r\n  \"area\": \"Tecnología\",\r\n  \"presupuesto\": 250000,\r\n  \"notaFinal\": 4,\r\n  \"estado\": 3,\r\n  \"fechaInicio\": \"2025-03-01T00:00:00.000Z\",\r\n  \"fechaFin\": \"2025-09-30T00:00:00.000Z\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/proyecto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyecto"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "evaluacion",
+			"item": [
+				{
+					"name": "crearProyecto true",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"f18704ef-fade-4cec-bd57-50224198fff3\",\r\n  \"titulo\": \"Desarrollo de App Móvil\",\r\n  \"area\": \"Tecnología\",\r\n  \"presupuesto\": 250000,\r\n  \"notaFinal\": 4,\r\n  \"estado\": 3,\r\n  \"fechaInicio\": \"2025-03-01T00:00:00.000Z\",\r\n  \"fechaFin\": \"2025-09-30T00:00:00.000Z\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/proyecto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"proyecto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crearProfesor true",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"cedula\": 12345678,\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"departamento\": \"Ingeniería\",\r\n  \"extension\": 21000,\r\n  \"esParEvaluador\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profesor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profesor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crearEvaluacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/evaluacion/Proyecto/f18704ef-fade-4cec-bd57-50224198fff3/Profesor/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"evaluacion",
+								"Proyecto",
+								"f18704ef-fade-4cec-bd57-50224198fff3",
+								"Profesor",
+								"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

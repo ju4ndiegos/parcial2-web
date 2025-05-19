@@ -10,10 +10,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EstudianteEntity } from './estudiante/estudiante.entity/estudiante.entity';
 import { ProfesorEntity } from './profesor/profesor.entity/profesor.entity';
 import { ProyectoEntity } from './proyecto/proyecto.entity/proyecto.entity';
-import { EvaluacionEntity } from './evaluacion/evaluacion.entity/evaluacion.entity';
+import { EvaluacionEntity } from './evaluacion/evaluacion.entity/evaluacion.entity';  
+import { EvaluacionProfesorModule } from './evaluacion-profesor/evaluacion-profesor.module';
 
 @Module({
-  imports: [EstudianteModule, ProfesorModule, ProyectoModule, EvaluacionModule,
+  imports: [EstudianteModule, ProfesorModule, ProyectoModule, EvaluacionModule,EvaluacionProfesorModule,
     TypeOrmModule.forRoot({
      type: 'postgres',
      host: 'localhost',
@@ -28,6 +29,6 @@ import { EvaluacionEntity } from './evaluacion/evaluacion.entity/evaluacion.enti
    }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService]
 })
 export class AppModule {}

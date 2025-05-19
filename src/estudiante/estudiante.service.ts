@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { EstudianteEntity } from './estudiante.entity/estudiante.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { BusinessError, BusinessLogicException } from 'src/shared/errors/business-error';
 
 @Injectable()
 export class EstudianteService {
@@ -13,7 +14,7 @@ export class EstudianteService {
 
     async crearEstudiante(estudiante: EstudianteEntity): Promise<EstudianteEntity> {
         if ((estudiante.promedio < 3.2 || estudiante.semestre<4)){
-            throw  Error("No se pudo crear")
+            throw new BusinessLogicException("No se pudo crear, revisar promedio de al menos 3.2 y semestre al menos 4", BusinessError.PRECONDITION_FAILED)
         }
         
         return await this.estudianteRepository.save(estudiante);
@@ -22,7 +23,7 @@ export class EstudianteService {
     async delete(id: string): Promise<void> {
        const estudiante = await this.estudianteRepository.findOne({where:{id}});
        if (!estudiante)
-         throw Error("Not found");
+         throw new BusinessLogicException("Not found", BusinessError.NOT_FOUND);
     
        await this.estudianteRepository.remove(estudiante);
    }
